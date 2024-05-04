@@ -22,5 +22,12 @@
       "nombre": "Modulo A",
       "id": 1
     }
+  ],
+  "modulo": [
+    {
+      "codigo": "02",
+      "nombre": "Modulo A",
+      "id": 1
+    }
   ]
 }
