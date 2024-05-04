@@ -1,0 +1,26 @@
+{
+  "seg_usuario": [
+    {
+      "id": 1,
+      "email": "admin@app.com",
+      "nombres": "Willyams",
+      "apellidos": "Yujra",
+      "descripcion": "Administradro del sistema"
+    }
+  ],
+  "seg_permiso": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "modulo": "admin",
+      "permitido": false
+    }
+  ],
+  "seg_modulo": [
+    {
+      "codigo": "01",
+      "nombre": "Modulo A",
+      "id": 1
+    }
+  ]
+}
