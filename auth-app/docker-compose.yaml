@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+  ui:
+    container_name: ui
+    image: yracnet/auth-ui:latest
+    depends_on:
+      - api-1
+    ports:
+      - "8080:80"
+    volumes:
+      - ./provider.json:/site/provider.json
+    networks:
+      - public
+
+  # auth-permiso:
+  #   image: nombre-de-tu-imagen-auth-usuario:latest
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - "8081:8080"
+  #   environment:
+  #     - JDBC_URL=jdbc:postgresql://auth-db:15432/db_green
+  #     - JDBC_USER=admin
+  #     - JDBC_PASS=admin1234
+  #   networks:
+  #     - public
+  #     - private
+
+  api-1:
+    container_name: api-1
+    image: ivanes12345/auth-usuario:latest
+    depends_on:
+      - db
+    ports:
+      - "8082:8080"
+    environment:
+      - JDBC_URL=jdbc:postgresql://db:5432/db_green
+      - JDBC_USER=admin
+      - JDBC_PASS=admin1234
+    networks:
+      - public
+      - private
+
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: db_green
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin1234
+    networks:
+      - public
+
+networks:
+  public:
+    driver: bridge
+  private:

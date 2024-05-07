@@ -1,0 +1,7 @@
+{
+    "admin": "http://localhost:5173/api/",
+    "modulo": "http://localhost:5173/api/modulo",
+    "usuario": "http://localhost:8082/usuarios",
+    "usuario1": "http://my-json-server.typicode.com/yracnet/repo/seg_usuario",
+    "permiso": "http://localhost:5173/api/permiso"
+}
