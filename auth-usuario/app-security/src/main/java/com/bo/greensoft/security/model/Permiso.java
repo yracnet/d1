@@ -13,29 +13,20 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-@Table(name="tbl_permiso", schema="demo")
+@Table(name="permiso", schema="public")
 public class Permiso {
 	
 	@Id
-	@Column(name="id_permiso")
+	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idPermiso;
 	
-	@Column(name="nombre")
-	private String nombre;
-	
-	@Column(name="codigo")
-	private String codigo;
-	
-	@Column(name="descripcion")
-	private String descripcion;
-	
 	@Column(name="permitido")
-	private Boolean permitido;
+	private String permitido;
 	
 	@Column(name="modulo")
 	private String modulo;
 
-	@Column(name="usuario_id")
+	@Column(name="usuarioid")
 	private Integer usuarioId;
 }

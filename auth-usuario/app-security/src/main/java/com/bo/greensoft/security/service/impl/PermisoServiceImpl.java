@@ -25,9 +25,6 @@ public class PermisoServiceImpl implements PermisoService{
 	@Override
 	public Permiso update(Permiso permiso, Integer id) {
 		Permiso permisoBean = this.permisoRepository.findById(id).get();
-		permisoBean.setNombre(permiso.getNombre());
-		permisoBean.setCodigo(permiso.getCodigo());
-		permisoBean.setDescripcion(permiso.getDescripcion());
 		permisoBean.setModulo(permiso.getModulo());
 		permisoBean.setPermitido(permiso.getPermitido());
 		permisoBean.setUsuarioId(permiso.getUsuarioId());

@@ -13,18 +13,18 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-@Table(name="tbl_usuario", schema="demo")
+@Table(name="usuario", schema="public")
 public class Usuario {
 
 	@Id
-	@Column(name="id_usuario")
+	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idUsuario;
 	
-	@Column(name="nombre")
+	@Column(name="nombres")
 	private String nombre;
 	
-	@Column(name="apellido")
+	@Column(name="apellidos")
 	private String apellido;
 	
 	@Column(name="email")
