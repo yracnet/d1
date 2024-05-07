@@ -20,7 +20,7 @@ import com.bo.greensoft.security.model.Permiso;
 import com.bo.greensoft.security.service.PermisoService;
 
 @RestController
-@RequestMapping("/permiso")
+@RequestMapping("/api/v2/permiso")
 @CrossOrigin("*")
 public class PermisoController {
 
@@ -30,27 +30,27 @@ public class PermisoController {
 		this.permisoService = permisoService;
 	}
 
-	@GetMapping("/findAll")
+	@GetMapping("")
 	public List<Permiso> findAll(){
 		return this.permisoService.findAll();
 	}
 	
-	@GetMapping("/findById/{id}")
+	@GetMapping("{id}")
 	public Permiso findById(@PathVariable Integer id) {
 		return this.permisoService.finById(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/")
 	public Permiso save(@Valid @RequestBody Permiso permiso) {
 		return this.permisoService.save(permiso);
 	}
 	
-	@PutMapping("/update/{id}")
+	@PutMapping("{id}")
 	public ResponseEntity<Permiso> update(@RequestBody Permiso permiso, @PathVariable Integer id) {
 		return new ResponseEntity<Permiso>(this.permisoService.update(permiso, id), HttpStatus.OK);
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("{id}")
 	public ResponseEntity<Permiso> delete(@PathVariable Integer id) {
 		return new ResponseEntity<Permiso>(this.permisoService.delete(id), HttpStatus.OK);
 	}

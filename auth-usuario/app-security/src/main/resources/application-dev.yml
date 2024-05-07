@@ -1,6 +1,6 @@
 # CONFIGURACION DEL PUERTO
 server:
-  port: '${PORT}'
+  port: 8080
   
 # CONFIGURACION DEL DATASOURCE
 spring:

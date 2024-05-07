@@ -20,7 +20,7 @@ import com.bo.greensoft.security.model.Usuario;
 import com.bo.greensoft.security.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/api/v2/usuario")
 @CrossOrigin("*")
 public class UsuarioController {
 
@@ -30,27 +30,27 @@ public class UsuarioController {
 		this.usuarioService = usuarioService;
 	}
 	
-	@GetMapping("/findAll")
+	@GetMapping("")
 	public List<Usuario> findAll(){
 		return this.usuarioService.findAll();
 	}
 	
-	@GetMapping("/findById/{id}")
+	@GetMapping("{id}")
 	public Usuario findById(@PathVariable Integer id) {
 		return this.usuarioService.finById(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("")
 	public Usuario save(@Valid @RequestBody Usuario usuario) {
 		return this.usuarioService.save(usuario);
 	}
 	
-	@PutMapping("/update/{id}")
+	@PutMapping("{id}")
 	public ResponseEntity<Usuario> update(@RequestBody Usuario usuario, @PathVariable Integer id) {
 		return new ResponseEntity<Usuario>(this.usuarioService.update(usuario, id), HttpStatus.OK);
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("{id}")
 	public ResponseEntity<Usuario> delete(@PathVariable Integer id) {
 		return new ResponseEntity<Usuario>(this.usuarioService.delete(id), HttpStatus.OK);
 	}
