@@ -18,8 +18,8 @@ public class Permiso {
 	
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idPermiso;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(name="permitido")
 	private String permitido;

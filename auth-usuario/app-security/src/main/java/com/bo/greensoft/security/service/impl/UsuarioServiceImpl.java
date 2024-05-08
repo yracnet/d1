@@ -19,6 +19,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	@Override
 	public Usuario save(Usuario usuario) {
+		Integer U_id = this.usuarioRepository.findMaxUid();
+		usuario.setId(U_id+1);
 		return this.usuarioRepository.save(usuario);
 	}
 

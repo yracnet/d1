@@ -19,6 +19,8 @@ public class PermisoServiceImpl implements PermisoService{
 
 	@Override
 	public Permiso save(Permiso permiso) {
+		Integer P_id = this.permisoRepository.findMaxPid();
+		permiso.setId(P_id+1);
 		return this.permisoRepository.save(permiso);
 	}
 
