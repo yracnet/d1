@@ -20,7 +20,7 @@ import com.bo.greensoft.security.model.Permiso;
 import com.bo.greensoft.security.service.PermisoService;
 
 @RestController
-@RequestMapping("/api/v2/permiso")
+@RequestMapping("/permiso")
 @CrossOrigin("*")
 public class PermisoController {
 
