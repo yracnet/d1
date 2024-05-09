@@ -1,0 +1,35 @@
+docker build -t auth-ui:latest .
+
+docker run -p 8081:80 auth-ui:latest
+
+
+docker tag auth-ui:latest yracnet/auth-ui:latest
+
+docker push yracnet/auth-ui:latest
+
+
+docker run --name auth-1 -d -p 8081:80 yracnet/auth-ui:latest
+
+docker run --name auth-2 -d -p 8082:80 -v /work/github/docker-dev/provider.json:/site/provider.json yracnet/auth-ui:latest
+
+docker run --name auth-4 -d -p 8084:80 -v D:/work/github/docker-dev/provider.json:/site/provider.json yracnet/auth-ui:latest
+
+
+
+
+
+[21:16, 6/5/2024] +591 60160035: ivanes12345/docker-repo:usuarios-rest-v2
+[21:16, 6/5/2024] +591 60160035: https://hub.docker.com/layers/ivanes12345/docker-repo/usuarios-rest-v2/images/sha256-e1f63b42ff21f7e4f0694727de51280f074d0992f84cc07184b2252c6f5dd9e8?context=repo
+
+docker run --name auth-4 -d -p 8084:80 -v D:/work/github/docker-dev/provider.json:/site/provider.json yracnet/auth-ui:latest
+
+yracnet/auth-ui:latest
+ivanes12345/auth-usuario:latest
+rimberth/auth-permiso:latest
+postgress
+
+
+
+ENV JDBC_URL jdbc:postgresql://localhost:5432/bd_green
+ENV JDBC_USER postgres
+ENV JDBC_PASS pass123

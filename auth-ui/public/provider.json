@@ -1,0 +1,9 @@
+{
+    "mode": "simple",
+    "admin": "http://my-json-server.typicode.com/yracnet/db",
+    "_modulo": "http://my-json-server.typicode.com/yracnet/db/modulo",
+    "_usuario": "http://my-json-server.typicode.com/yracnet/db/seg_usuario",
+    "_permiso": "http://my-json-server.typicode.com/yracnet/db/seg_permiso",
+    "usuario": "http://localhost:8082/usuarios",
+    "permiso": "http://localhost:8081/permiso"
+}

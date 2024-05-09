@@ -1,0 +1,54 @@
+{
+  "usuario2": [
+    {
+      "email": "admin@system.com",
+      "nombres": "Ricardo",
+      "apellidos": "Huanca",
+      "descripcion": "sin descripcion",
+      "id": 1
+    }
+  ],
+  "usuario": [
+    {
+      "id": 1,
+      "email": "admin@app.com",
+      "nombres": "Willyams",
+      "apellidos": "Yujra",
+      "descripcion": "Administradro del sistema"
+    },
+    {
+      "email": "yracnet@gmail.com",
+      "nombres": "Ricardo",
+      "apellidos": "Huanca",
+      "descripcion": "sin descripcion",
+      "id": 2
+    }
+  ],
+  "permiso": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "modulo": "admin",
+      "permitido": "si"
+    },
+    {
+      "permitido": true,
+      "usuarioId": 2,
+      "modulo": "cliente",
+      "id": 2
+    },
+    {
+      "permitido": true,
+      "usuarioId": 2,
+      "modulo": "cuenta",
+      "id": 3
+    }
+  ],
+  "modulo": [
+    {
+      "codigo": "01",
+      "nombre": "Modulo Axxxxxxxxxx",
+      "id": 1
+    }
+  ]
+}
