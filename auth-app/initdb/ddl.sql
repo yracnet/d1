@@ -11,4 +11,8 @@ PERMITIDO BOOLEAN NULL,
 MODULO TEXT NULL);
 
 ALTER TABLE ONLY public.permiso
-    ADD CONSTRAINT FK_PERMISO_USUARIO FOREIGN KEY (ID) REFERENCES public.usuario(ID) NOT VALID;
+    ADD CONSTRAINT FK_PERMISO_USUARIO FOREIGN KEY (USUARIOID) REFERENCES public.usuario(ID) NOT VALID;
+	
+INSERT INTO public.usuario (id, nombres, apellidos, email, descripcion) VALUES (1, 'Rocky', 'Stallone', 'rocky.stallone', 'Usuario administrador de ventas');
+
+INSERT INTO public.permiso (id, usuarioid, modulo, permitido) VALUES (1, 1, 'VENTAS', true);
