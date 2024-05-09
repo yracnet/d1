@@ -22,7 +22,7 @@ public class Permiso {
 	private Integer id;
 	
 	@Column(name="permitido")
-	private String permitido;
+	private Boolean permitido;
 	
 	@Column(name="modulo")
 	private String modulo;
