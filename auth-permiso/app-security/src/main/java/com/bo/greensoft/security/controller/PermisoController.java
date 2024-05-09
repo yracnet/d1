@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,8 +32,10 @@ public class PermisoController {
 	}
 
 	@GetMapping("")
-	public List<Permiso> findAll(){
-		return this.permisoService.findAll();
+	public ResponseEntity<List<Permiso>> findAll(){
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("X-Total-Count", "5");
+		return new ResponseEntity<List<Permiso>>(this.permisoService.findAll(), headers, HttpStatus.OK);
 	}
 	
 	@GetMapping("{id}")
