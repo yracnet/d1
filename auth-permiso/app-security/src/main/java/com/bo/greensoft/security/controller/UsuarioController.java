@@ -20,7 +20,7 @@ import com.bo.greensoft.security.model.Usuario;
 import com.bo.greensoft.security.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/v2/usuario")
+@RequestMapping("/api/v2/usuario/")
 @CrossOrigin("*")
 public class UsuarioController {
 

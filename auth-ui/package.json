@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "ra-data-json-server": "^4.16.17",
-    "ra-data-simple-rest": "^4.16.17",
     "ra-language-spanish": "^1.0.0",
     "react": "^18.2.0",
     "react-admin": "^4.16.17",

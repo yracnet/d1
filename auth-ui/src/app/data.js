@@ -1,5 +1,4 @@
 import jsonServerProvider from "ra-data-json-server";
-import simpleRestProvider from "ra-data-simple-rest";
 import { fetchUtils } from "ra-core";
 
 const PROVIDERS = {
@@ -61,7 +60,7 @@ const PROVIDERS = {
         // console.log(">>>>>create", resource, params);
         const options = {
           method: "POST",
-          body: JSON.stringify({id:1, ...params.data }),
+          body: JSON.stringify({id:-1, ...params.data }),
         };
         return httpClient(`${apiUrl}/`, options).then(({ headers, json }) => {
           return {

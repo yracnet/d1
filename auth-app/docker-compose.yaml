@@ -6,6 +6,7 @@ services:
     image: yracnet/auth-ui:latest
     depends_on:
       - api-1
+      - api-2
     ports:
       - "8080:80"
     volumes:
@@ -13,7 +14,7 @@ services:
     networks:
       - public
 
-  auth-2:
+  api-2:
     container_name: api-2
     image: rimberth/auth-permiso:latest
     depends_on:
@@ -31,7 +32,7 @@ services:
 
   api-1:
     container_name: api-1
-    image: ivanes12345/auth-usuario:latest
+    image: ivanes12345/auth-usuario:latest2
     depends_on:
       - db
     ports:
