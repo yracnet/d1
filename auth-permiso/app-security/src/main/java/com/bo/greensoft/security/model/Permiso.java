@@ -29,4 +29,7 @@ public class Permiso {
 
 	@Column(name="usuarioid")
 	private Integer usuarioId;
+	
+	@Column(name="moduloid")
+	private Integer moduloId;
 }
