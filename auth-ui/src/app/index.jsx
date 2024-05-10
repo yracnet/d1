@@ -39,6 +39,7 @@ export const App = () => {
     >
       <Resource name="usuario" list={UsuarioList} create={UsuarioCreate} />
       <Resource name="permiso" list={PermisoList} create={PermisoCreate} />
+      <Resource name="module" list={ModuloList} create={ModuloCreate} />
     </Admin>
   ) : (
     <h1>Cargando....</h1>
