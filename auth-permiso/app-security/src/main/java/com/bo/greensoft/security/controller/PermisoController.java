@@ -34,7 +34,7 @@ public class PermisoController {
 	@GetMapping("")
 	public ResponseEntity<List<Permiso>> findAll(){
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("X-Total-Count", "5");
+		headers.add("X-Total-Count", "15");
 		return new ResponseEntity<List<Permiso>>(this.permisoService.findAll(), headers, HttpStatus.OK);
 	}
 	

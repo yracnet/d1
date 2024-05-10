@@ -22,10 +22,10 @@ public class Usuario {
 	private Integer id;
 	
 	@Column(name="nombres")
-	private String nombre;
+	private String nombres;
 	
 	@Column(name="apellidos")
-	private String apellido;
+	private String apellidos;
 	
 	@Column(name="email")
 	private String email;

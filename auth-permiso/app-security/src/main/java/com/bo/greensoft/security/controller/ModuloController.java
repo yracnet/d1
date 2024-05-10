@@ -17,44 +17,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bo.greensoft.security.model.Usuario;
-import com.bo.greensoft.security.service.UsuarioService;
+import com.bo.greensoft.security.model.Modulo;
+import com.bo.greensoft.security.service.ModuloService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/modulo")
 @CrossOrigin("*")
-public class UsuarioController {
+public class ModuloController {
 
-	private UsuarioService usuarioService;
+	private ModuloService moduloService;
 
-	public UsuarioController(UsuarioService usuarioService) {
-		this.usuarioService = usuarioService;
+	public ModuloController(ModuloService moduloService) {
+		this.moduloService = moduloService;
 	}
 	
 	@GetMapping("")
-	public ResponseEntity<List<Usuario>> findAll(){
+	public ResponseEntity<List<Modulo>> findAll(){
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("X-Total-Count", "15");
-		return new ResponseEntity<List<Usuario>>(this.usuarioService.findAll(), headers,HttpStatus.OK);
+		return new ResponseEntity<List<Modulo>>(this.moduloService.findAll(), headers,HttpStatus.OK);
 	}
 	
 	@GetMapping("{id}")
-	public Usuario findById(@PathVariable Integer id) {
-		return this.usuarioService.finById(id);
+	public Modulo findById(@PathVariable Integer id) {
+		return this.moduloService.finById(id);
 	}
 	
 	@PostMapping("/")
-	public Usuario save(@Valid @RequestBody Usuario usuario) {
-		return this.usuarioService.save(usuario);
+	public Modulo save(@Valid @RequestBody Modulo modulo) {
+		return this.moduloService.save(modulo);
 	}
 	
 	@PutMapping("{id}")
-	public ResponseEntity<Usuario> update(@RequestBody Usuario usuario, @PathVariable Integer id) {
-		return new ResponseEntity<Usuario>(this.usuarioService.update(usuario, id), HttpStatus.OK);
+	public ResponseEntity<Modulo> update(@RequestBody Modulo modulo, @PathVariable Integer id) {
+		return new ResponseEntity<Modulo>(this.moduloService.update(modulo, id), HttpStatus.OK);
 	}
 
 	@DeleteMapping("{id}")
-	public ResponseEntity<Usuario> delete(@PathVariable Integer id) {
-		return new ResponseEntity<Usuario>(this.usuarioService.delete(id), HttpStatus.OK);
+	public ResponseEntity<Modulo> delete(@PathVariable Integer id) {
+		return new ResponseEntity<Modulo>(this.moduloService.delete(id), HttpStatus.OK);
 	}
 }

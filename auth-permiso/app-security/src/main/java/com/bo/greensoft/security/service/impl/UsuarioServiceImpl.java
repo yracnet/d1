@@ -27,8 +27,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public Usuario update(Usuario usuario, Integer id) {
 		Usuario usuarioBean = this.usuarioRepository.findById(id).get();
-		usuarioBean.setNombre(usuario.getNombre());
-		usuarioBean.setApellido(usuario.getApellido());
+		usuarioBean.setNombres(usuario.getNombres());
+		usuarioBean.setApellidos(usuario.getApellidos());
 		usuarioBean.setDescripcion(usuario.getDescripcion());
 		usuarioBean.setEmail(usuario.getEmail());
 		return this.usuarioRepository.save(usuarioBean);
