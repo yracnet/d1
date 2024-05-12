@@ -1,12 +1,12 @@
 version: "3.8"
 
 services:
-  ui:
-    container_name: ui
+  auth-ui:
+    container_name: auth-ui
     image: yracnet/auth-ui:latest
     depends_on:
-      - api-permiso
-      - api-usuario
+      - auth-permiso
+      - auth-usuario
     ports:
       - "8080:80"
     volumes:
@@ -14,8 +14,8 @@ services:
     networks:
       - public
 
-  api-permiso:
-    container_name: api-permiso
+  auth-permiso:
+    container_name: auth-permiso
     image: rimberth/auth-permiso:latest
     depends_on:
       - db
@@ -29,8 +29,8 @@ services:
       - public
       - private
 
-  api-usuario:
-    container_name: api-usuario
+  auth-usuario:
+    container_name: auth-usuario
     image: rimberth/auth-usuario:latest
     depends_on:
       - db
