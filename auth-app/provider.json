@@ -2,7 +2,7 @@
     "mode": "simple",
     "admin": "http://localhost:5173/api/",
     "usuario1": "http://localhost:8082/usuarios",
-    "usuario": "http://localhost:8081/usuario",
+    "usuario": "http://localhost:8082/usuario",
     "permiso": "http://localhost:8081/permiso",
 	"modulo": "http://localhost:8081/modulo"
 }

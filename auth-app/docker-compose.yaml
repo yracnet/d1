@@ -5,8 +5,8 @@ services:
     container_name: ui
     image: yracnet/auth-ui:latest
     depends_on:
-      - api-1
-      - api-2
+      - api-permiso
+      - api-usuario
     ports:
       - "8080:80"
     volumes:
@@ -14,33 +14,32 @@ services:
     networks:
       - public
 
-  api-2:
-    container_name: api-2
+  api-permiso:
+    container_name: api-permiso
     image: rimberth/auth-permiso:latest
     depends_on:
       - db
     ports:
       - "8081:8081"
     environment:
-      - JDBC_URL=jdbc:postgresql://db:5432/bd_green
-      - JDBC_USER=admin
-      - JDBC_PASWD=admin1234
-      - PORT=8081
+      - JDBC_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
+      - JDBC_USER=${POSTGRES_USER}
+      - JDBC_PASWD=${POSTGRES_PASSWORD}
     networks:
       - public
       - private
 
-  api-1:
-    container_name: api-1
-    image: ivanes12345/auth-usuario:latest2
+  api-usuario:
+    container_name: api-usuario
+    image: rimberth/auth-usuario:latest
     depends_on:
       - db
     ports:
-      - "8082:8080"
+      - "8082:8082"
     environment:
-      - JDBC_URL=jdbc:postgresql://db:5432/bd_green
-      - JDBC_USER=admin
-      - JDBC_PASS=admin1234
+      - JDBC_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
+      - JDBC_USER=${POSTGRES_USER}
+      - JDBC_PASWD=${POSTGRES_PASSWORD}
     networks:
       - public
       - private
@@ -53,10 +52,11 @@ services:
       - "5432:5432"
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
+      - data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: bd_green
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin1234
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - private
 
@@ -64,3 +64,7 @@ networks:
   public:
     driver: bridge
   private:
+
+volumes:
+  data:
+    driver: local
